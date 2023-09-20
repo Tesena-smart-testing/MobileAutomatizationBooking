@@ -1,7 +1,19 @@
 class HotelScreen {
   get enterDestinationField() {
-    const elementByAccessabilityId = $("~ Enter your destination"); //accessibility id
+    const elementByAccessabilityId = $("~Enter your destination"); //accessibility id
     return elementByAccessabilityId;
+  }
+
+  get enterDestinationFieldInner() {
+    const elementByResourceId = $(
+      "*//android.widget.EditText[@resource-id='com.booking:id/facet_with_bui_free_search_booking_header_toolbar_content']"
+    );
+    return elementByResourceId;
+  }
+
+  get nameOfCity() {
+    const elementByText = $(`//*[contains(@text, "City in Czech Republic")]`);
+    return elementByText;
   }
 
   get hotelBtn() {
@@ -11,19 +23,17 @@ class HotelScreen {
     return elementByResourceId;
   }
 
-  get outsideField(){
-    const elementByResourceId = $(
-      "*//android.widget.FrameLayout[@resource-id='com.booking:id/action_bar_root']"
-    );
-    return elementByResourceId;
-  }
 
-async tapOutside(){
-    await this.outsideField.click()
-}
+  async tapDestinationField() {
+    await this.enterDestinationField.click();
+  }
 
   async tapOnHotelBtn() {
     await this.hotelBtn.click();
+  }
+
+  async tapOnNameOfCity() {
+    await this.nameOfCity.click();
   }
 }
 
