@@ -1,9 +1,8 @@
 // const assert = require("chai").assert;
-import NativeAlert from "../screenobjects/components/NAtiveAlert";
 import LoginScreen from "../screenobjects/LoginScreen";
 import OnboardingPage from "../screenobjects/components/OnboardingPage";
 
-describe("should be able login successfully", async () => {
+describe("should be able login with Google successfully", async () => {
   beforeEach(async () => {
     await OnboardingPage.onboard();
   });
