@@ -47,6 +47,11 @@ class HotelScreen {
     return elementByText;
   }
 
+  get descriptionTaxOfHotel(){
+    const elementByText = $(`//*[contains(@text, "Includes taxes and fees")]`);
+    return elementByText;
+  }
+
   async tapDestinationField() {
     await this.enterDestinationField.click();
   }
@@ -79,13 +84,11 @@ class HotelScreen {
   async searchForHotel(hotel, date) {
     await this.enterDestinationFieldInner.addValue(hotel);
     await this.tapOnNameOfCity();
-    browser.pause(3000);
     await Calendar.tapButtonWithText(date);
   }
 
   async chooseRoomAndGuests(){
     await this.tapOnRoomAndGuestsField()
-    browser.pause(3000);
     await this.tapApplyRoomAndGustsBtn()
   }
 }

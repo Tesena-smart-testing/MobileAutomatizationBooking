@@ -1,6 +1,4 @@
 class LoginScreen {
-
-
   get googleBtn() {
     const elementByText = $(`//*[contains(@text, 'Continue with Google')]`);
     return elementByText;
