@@ -1,6 +1,7 @@
 import OnboardingPage from "../screenobjects/components/OnboardingPage";
 import LoginPage from "../screenobjects/components/LoginPage";
 import HotelScreen from "../screenobjects/HotelScreen";
+import Gestures from '../helpers/Gestures'
 
 
 
@@ -10,6 +11,14 @@ describe("Searching for a hotel", async () => {
     await LoginPage.login();
   });
   it("should be able to find a hotel", async () => {
+    await browser.pause(4000)
+    //Swipe up to search element
+    const swipeElement = await $(`//*[contains(@text, "Travel articles")]`);
+    await Gestures.swipeUp(0.75);
+    // Assert that the element is displayed
+    await expect(swipeElement).toBeDisplayed();
+    // Swipe doen to search field
+    await Gestures.swipeDown(0.75);
     // Navigate to the hotel screen
     await HotelScreen.navigateToHotelScreen();
     // Assert that the field for searching is displayed
