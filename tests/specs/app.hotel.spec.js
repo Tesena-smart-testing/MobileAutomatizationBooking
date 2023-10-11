@@ -2,6 +2,7 @@ import OnboardingPage from "../screenobjects/components/OnboardingPage";
 import LoginPage from "../screenobjects/components/LoginPage";
 import HotelScreen from "../screenobjects/HotelScreen";
 import Gestures from "../helpers/Gestures";
+import allureReporter from "@wdio/allure-reporter";
 
 describe("Searching for a hotel", async () => {
   beforeEach(async () => {
@@ -9,7 +10,7 @@ describe("Searching for a hotel", async () => {
     await LoginPage.login();
   });
   it("should be able to find a hotel", async () => {
-    await browser.pause(4000);
+    await HotelScreen.searchBtn.waitForDisplayed();
     //Swipe up to search element
     const swipeElement = await $(`//*[contains(@text, "Travel articles")]`);
     await Gestures.swipeUp(0.75);
