@@ -22,8 +22,7 @@ exports.config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-
-  specs: ["tests/specs/*.js"],
+  specs: ["tests/specs/app*.spec.js"],
   // Patterns to exclude.
   exclude: [],
   //
@@ -48,30 +47,19 @@ exports.config = {
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
-  capabilities: [
-    {
-      // capabilities for local Appium web tests on an Android Emulator
-      platformName: "Android",
-      "appium:deviceName": "Pixel 6.1",
-      "appium:platformVersion": "13.0",
-      "appium:automationName": "UiAutomator2",
-      "appium:appPackage": "com.booking",
-      "appium:appActivity":
-        "com.booking.identity.privacy.ui.PrivacyAppActivity",
-    },
-  ],
+
 
   // Real device capabilities
-  //   capabilities: [
-  //   {
-  //     platformName: "Android",
-  //     deviceName: "Xiaomy12", // Replace with your device's name
-  //     platformVersion: "12", // Replace with your device's Android version
-  //     automationName: "UiAutomator2",
-  //     appPackage: "com.booking",
-  //     appActivity: "com.booking.identity.privacy.ui.PrivacyAppActivity",
-  //   },
-  // ],
+  capabilities: [
+  {
+    platformName: "Android",
+    deviceName: "Pixel12", 
+    platformVersion: "12", 
+    automationName: "UiAutomator2",
+    appPackage: "com.booking",
+    appActivity: "com.booking.identity.privacy.ui.PrivacyAppActivity",
+  },
+],
 
   //
   // ===================
@@ -142,16 +130,11 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: [
-    [
-      "allure",
-      {
-        outputDir: "allure-results",
+  reporters:[['allure', {
+        outputDir: 'allure-results',
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: true,
-      },
-    ],
-  ],
+    }]],
 
   //
   // Options to be passed to Mocha.

@@ -28,11 +28,9 @@ Before you can start using the Allure reporter, you need to install the necessar
 npm install @wdio/allure-reporter --save-dev
 npm install allure-commandline
 
-
 ### Configuration
 
 Once you have the required packages installed, you need to configure your test framework to use the Allure reporter. This example shows how to configure it with WebDriverIO:
-
 
 // In your WebDriverIO configuration file (e.g., wdio.conf.js)
 
@@ -47,7 +45,6 @@ exports.config = {
     disableWebdriverScreenshotsReporting: false,
   }]],
 };
-
 
 ### Generating and Viewing Reports
 
@@ -78,3 +75,7 @@ To run the project, follow these steps:
    npx wdio run ./wdio.conf.js
 
    npx allure generate --clean allure-results && npx allure open
+
+   **If you want to run a separated spec file, use this command:**
+
+   npx wdio wdio.conf.js --spec ./tests/specs/app.hotel.spec.js
