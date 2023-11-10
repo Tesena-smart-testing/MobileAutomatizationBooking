@@ -1,4 +1,4 @@
-import NativeAlert from "../screenobjects/components/NAtiveAlert";
+import NativeAlert from "../screenobjects/components/NativeAlert";
 
 
 
