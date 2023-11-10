@@ -1,4 +1,4 @@
-const NativeAlert = require("./NativeAlert");
+import NativeAlert from "./NativeAlert";
 
 class OnboardingPage {
   async onboard() {

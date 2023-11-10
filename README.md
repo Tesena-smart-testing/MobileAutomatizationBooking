@@ -18,6 +18,8 @@ Before you begin, ensure you have met the following requirements:
 3. Install the project dependencies using npm: npm install
 4. Install WebDriverIO globally (if not already installed):npm install -g webdriverio
 5. Install Android Studio if you haven't already. You can download it from the [official website](https://developer.android.com/studio).
+6. Add Babel: npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/register
+Babel setup:https://webdriver.io/docs/babel
 
 ## Using Allure Reporter for Test Reporting
 
